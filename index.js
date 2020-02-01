@@ -1,8 +1,8 @@
 const express = require("express");
+const cors = require("cors");
 const middlewareFormidable = require("express-formidable");
 const app = express();
 app.use(middlewareFormidable());
-const cors = require("cors");
 app.use(cors());
 
 const mailGun = require("./routes/mailgun");

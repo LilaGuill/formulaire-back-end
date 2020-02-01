@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const mailgun = require("mailgun-js");
 require("dotenv").config();
+const cors = require("cors");
+router.use(cors());
 
 router.post("/send", (req, res) => {
-  console.log(req.fields);
   try {
     const DOMAIN = process.env.DOMAIN;
     const mg = mailgun({
