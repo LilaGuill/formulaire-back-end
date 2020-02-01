@@ -5,12 +5,7 @@ require("dotenv").config();
 const cors = require("cors");
 router.use(cors());
 
-var corsOptions = {
-  origin: "http://127.0.0.1:5500",
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
-router.post("/send", cors(corsOptions), (req, res) => {
+router.post("/send", cors(), (req, res) => {
   try {
     const DOMAIN = process.env.DOMAIN;
     const mg = mailgun({
