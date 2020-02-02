@@ -1,12 +1,12 @@
 const express = require("express");
+const app = express();
 const middlewareFormidable = require("express-formidable");
 const mailgun = require("mailgun-js");
 const cors = require("cors");
-const app = express();
-app.use(middlewareFormidable());
-app.use(cors());
 
 require("dotenv").config();
+app.use(middlewareFormidable());
+app.use(cors());
 
 app.post("/send", (req, res) => {
   try {
